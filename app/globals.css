@@ -17,17 +17,136 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #EEE;
+  color: #999;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+h1 {
+  text-align: center;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: 300px 300px 300px;
+  grid-template-rows: 130px 130px 130px;
+  cursor: pointer;
+  position: relative;
+}
+
+@media screen and (max-width: 767px) {
+  .board {
+    grid-template-columns: 100px 100px 100px;
+    grid-template-rows: 100px 100px 100px;
   }
+}
+
+@media screen and (min-width: 768px) {
+  .board {
+    grid-template-columns: 160px 160px 160px;
+    grid-template-rows: 140px 140px 140px;
+  }
+}
+
+.tile {
+  color: currentColor;
+  font-size: 3rem;
+  font-weight: 900;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.right-border {
+  border-right: 0.2em solid #000;
+}
+
+.bottom-border {
+  border-bottom: 0.2em solid #000;
+}
+
+.x-hover:hover::after {
+  content: "X";
+  opacity: 0.4;
+}
+
+.o-hover:hover::after {
+  content: "O";
+  opacity: 0.4;
+}
+
+.strike {
+  position: absolute;
+  background-color: #9932CC;
+}
+
+.strike-row-1 {
+  width: 100%;
+  height: 6px;
+  top: 16%;
+}
+
+.strike-row-2 {
+  width: 100%;
+  height: 6px;
+  top: 48%;
+}
+
+.strike-row-3 {
+  width: 100%;
+  height: 6px;
+  top: 82%;
+}
+
+.strike-column-1 {
+  height: 100%;
+  width: 4px;
+  top: 0;
+  left: 15%;
+}
+
+.strike-column-2 {
+  height: 100%;
+  width: 4px;
+  top: 0;
+  left: 48.7%;
+}
+
+.strike-column-3 {
+  height: 100%;
+  width: 4px;
+  top: 0;
+  left: 83%;
+}
+
+.strike-diagonal-1 {
+  width: 90%;
+  height: 6px;
+  top: 50%;
+  left: 6%;
+  transform: skewY(41deg);
+}
+
+.strike-diagonal-2 {
+  width: 90%;
+  height: 6px;
+  top: 50%;
+  left: 3%;
+  transform: skewY(-41deg);
+}
+
+.reset-button {
+  padding: 20px;
+  background-color: #9932CC;
+  width: 100%;
+  font-size: 1.5em;
+  font-weight: 900;
+  transition: opacity .25s ease-in-out;
+  color: #FFF;
+}
+
+.reset-button:hover {
+  opacity: .8;
 }
