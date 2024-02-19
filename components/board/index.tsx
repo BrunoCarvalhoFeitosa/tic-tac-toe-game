@@ -6,7 +6,7 @@ interface TileProps {
     player: string
     tiles: Array<string>
     strikeClass: string
-    handleTileClick: (index: number) => void;
+    handleTileClick: (index: number) => void
 }
 
 export const Board = ({ player, tiles, strikeClass, handleTileClick }: TileProps) => {
