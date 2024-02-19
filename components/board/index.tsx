@@ -6,7 +6,7 @@ interface TileProps {
     player: string
     tiles: Array<string>
     strikeClass: string
-    handleTileClick: (index: string) => void
+    handleTileClick: (index: number) => void;
 }
 
 export const Board = ({ player, tiles, strikeClass, handleTileClick }: TileProps) => {
@@ -18,54 +18,54 @@ export const Board = ({ player, tiles, strikeClass, handleTileClick }: TileProps
                         player={player}
                         value={tiles[0]}
                         className="right-border bottom-border"
-                        onClick={() => handleTileClick("0")}
+                        onClick={() => handleTileClick(0)}
                     />
                     <Tile
                         player={player}
                         value={tiles[1]}
                         className="right-border bottom-border"
-                        onClick={() => handleTileClick("1")}
+                        onClick={() => handleTileClick(1)}
                     />
                     <Tile
                         player={player}
                         value={tiles[2]}
                         className="bottom-border"
-                        onClick={() => handleTileClick("2")}
+                        onClick={() => handleTileClick(2)}
                     />
                     <Tile
                         player={player}
                         value={tiles[3]}
                         className="right-border bottom-border"
-                        onClick={() => handleTileClick("3")}
+                        onClick={() => handleTileClick(3)}
                     />
                     <Tile
                         player={player}
                         value={tiles[4]}
                         className="right-border bottom-border"
-                        onClick={() => handleTileClick("4")}
+                        onClick={() => handleTileClick(4)}
                     />
                     <Tile
                         player={player}
                         value={tiles[5]}
                         className="bottom-border"
-                        onClick={() => handleTileClick("5")}
+                        onClick={() => handleTileClick(5)}
                     />
                     <Tile
                         player={player}
                         value={tiles[6]}
                         className="right-border"
-                        onClick={() => handleTileClick("6")}
+                        onClick={() => handleTileClick(6)}
                     />
                     <Tile
                         player={player}
                         value={tiles[7]}
                         className="right-border"
-                        onClick={() => handleTileClick("7")}
+                        onClick={() => handleTileClick(7)}
                     />
                     <Tile
                         player={player}
                         value={tiles[8]}
-                        onClick={() => handleTileClick("8")}
+                        onClick={() => handleTileClick(8)}
                     />
                 </div>
                 <div>
